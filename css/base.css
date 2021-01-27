@@ -1,0 +1,83 @@
+/* 初始化css */
+
+/* 清除标签默认样式，保持不同页面风格统一 */
+
+/* 1. 清除内外边距 */
+* {
+    margin: 0;
+    padding: 0;
+    /* CSS3盒子模型 */
+    box-sizing: border-box;
+}
+
+/* 2. 设置页面字体大小和family */
+body {
+    /* 谷歌字体默认大小，保证其他页面也是16px */
+    font-size: 16px;
+    /* 谷歌字体默认微软雅黑， 保证其他页面也是微软雅黑*/
+    font-family: "微软雅黑";
+    /*点击高亮我们需要清除清除  设置为transparent 完成透明*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 3. 实际开发，h1-h6默认都不会让他加粗，我们要的是他的语义化 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 4. 实际开发，em, i都不需要倾斜 */
+em,
+i {
+    font-style: normal;
+}
+
+/* 5. 实际开发  去掉a标签的下划线 */
+a {
+    color: #1c1c1c;
+    text-decoration: none;
+    /*禁用长按页面时的弹出菜单*/
+    -webkit-touch-callout: none;
+}
+
+/* 6. 让文字和图片垂直居中对齐, div包裹img的时候，底部是没有缝隙的 */
+img {
+    vertical-align: middle;
+    /*禁用长按页面时的弹出菜单*/
+    -webkit-touch-callout: none;
+}
+
+/* 7.0 去除ul li前面的小黑点 */
+ul {
+    list-style: none;
+}
+
+/* 8.0 清除浮动，伪元素清除 */
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+/* 兼容ie 6 7 8 */
+.clearfix {
+    *zoom: 1;
+}
+
+input,
+textarea,
+button {
+    outline: none;
+    /*在移动端浏览器默认的外观在iOS上加上这个属性才能给按钮和输入框自定义样式*/
+    -webkit-appearance: none;
+}
+
+textarea {
+    resize: none;
+}
